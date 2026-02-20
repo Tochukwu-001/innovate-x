@@ -1,9 +1,11 @@
-import React from 'react'
+// "use server";
+
+import View from "./view";
 
 const page = () => {
   return (
     <main>
-      View Inspirational Ideas
+      <View/>
     </main>
   )
 }

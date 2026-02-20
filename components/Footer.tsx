@@ -7,8 +7,8 @@ import { FaYoutube } from "react-icons/fa";
 
 export default function Footer(){
     return (
-        <main>
-            <Link href={"/"} className="flex items-center z-50">
+        <main className="flex max-md:flex-col max-md:gap-5 items-center justify-between md:px-10 py-2 px-5 border-t border-gray-300">
+            <Link href={"/"} className="flex items-center">
                 <Image
                     src={"/logo.png"}
                     alt="logo"
@@ -19,13 +19,13 @@ export default function Footer(){
                 <p className="font-semibold text-xl text-gray-800 max-md:hidden">Innovate-X</p>
             </Link>
 
-            <div>
-                <Link href={"/"}>Chat With Us</Link>
-                <Link href={"/"}>Privacy Policy</Link>
-                <Link href={"/"}>Terms of Use</Link>
+            <div className="text-sm text-gray-700 flex max-md:flex-col max-md:gap-2 gap-5">
+                <Link href={"/"} className="hover:underline">Chat With Us</Link>
+                <Link href={"/"} className="hover:underline">Privacy Policy</Link>
+                <Link href={"/"} className="hover:underline">Terms of Use</Link>
             </div>
 
-            <div>
+            <div className="flex items-center gap-5 text-2xl">
                 <FaFacebook/>
                 <FaInstagram/>
                 <FaXTwitter/>
