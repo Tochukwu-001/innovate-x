@@ -7,14 +7,16 @@ const View = () => {
     <main className='min-h-dvh'>
         <h1 className='text-center my-10 font-semibold text-2xl text-gray-800'>Explore Innovative Solutions Shared by our Community</h1>
         <section className='grid md:grid-cols-2 lg:grid-cols-3'>
-            <div>
-                <h1>Innovation Title</h1>
-                <div>
-                    <article>
-                        <img src="/bg1.jpg" alt="John Doe" />
-                        <p>John Doe</p>
-                    </article>
-                    <p>2/12/2025</p>
+            <div className='shadow-sm p-3'>
+                <h1 className='text-center text-2xl font-bold text-gray-800'>Innovation Title</h1>
+                <div className=''>
+                    <div className='flex items-center justify-between'>
+                        <article>
+                            <img src="/bg1.jpg" alt="John Doe" />
+                            <p>John Doe</p>
+                        </article>
+                        <p>2/12/2025</p>
+                    </div>
                     <div>
                         <h1>Community Problem</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias deleniti maxime architecto mollitia consequuntur eligendi culpa neque vel, ipsum placeat nisi, odit iusto, eum ut voluptates sint hic repellendus quas excepturi animi sapiente. Officiis excepturi ipsa omnis quibusdam asperiores, doloremque ipsum sequi ratione cum reiciendis delectus in laboriosam, esse maxime!</p>
