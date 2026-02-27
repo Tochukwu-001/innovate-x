@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
+    // commit
     <>
       <main className="min-h-dvh bg-[url('/bg2.jpg')] bg-no-repeat bg-center bg-cover z-20">
         <section className="min-h-dvh bg-black/40 z-20 p-3 flex items-center justify-between">
