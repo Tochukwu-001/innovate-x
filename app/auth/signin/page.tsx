@@ -1,8 +1,15 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub, FaApple  } from "react-icons/fa";
+import { signIn, auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 
-export default function signin(){
+export default async function signin(){
+        const session = await auth()
+        if (session) {
+            redirect("/post-innovation")
+        }
+        // console.log(session);
     return(
         <main className="min-h-dvh grid lg:grid-cols-2">
             <div className="min-h-dvh bg-[url('/bg-image2.jpg')] bg-cover bg-center bg-no-repeat] max-lg:hidden"></div>
@@ -21,10 +28,17 @@ export default function signin(){
                     </div>
 
                     <div className="flex flex-col gap-5">
-                        <button className="border rounded-full flex items-center justify-center gap-2 py-2 border-gray-300">
-                            <FcGoogle className="text-xl" />
+                        <form
+                            action={async () => {
+                                "use server"
+                                await signIn("google")
+                            }}
+                            >
+                            <button type="submit" className="border rounded-full flex items-center justify-center gap-2 py-2 border-gray-300 w-full cursor-pointer">
+                                <FcGoogle className="text-xl" />
                             <p>Google</p>
                         </button>
+                        </form>
                         <button className="border rounded-full flex items-center justify-center gap-2 py-2 border-gray-300">
                             <FaGithub className="text-xl" />
                             <p>Github</p>
