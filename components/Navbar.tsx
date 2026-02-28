@@ -54,13 +54,15 @@ export default function Navbar() {
           </Link> : null
         }
         {session ? (
-          <Image
-            alt={session.user?.name?.slice(0, 2).toUpperCase() ?? ""}
-            src={session?.user?.image ?? ""}
-            width={200}
-            height={200}
-            className="w-10 h-10 rounded-full"
-          />
+          <Link href={"/profile"}>
+            <Image
+              alt={session.user?.name?.slice(0, 2).toUpperCase() ?? "user"}
+              src={session?.user?.image ?? "/user.png"}
+              width={200}
+              height={200}
+              className="w-10 h-10 rounded-full"
+            />
+          </Link>
         ) : (
           <Link
             className="bg-sky-600 text-white text-lg px-5 py-2 rounded-full flex items-center gap-2"
@@ -103,13 +105,15 @@ export default function Navbar() {
           </Link> : null
         }
         {session ? (
-          <Image
-            alt={session.user?.name?.slice(0, 2).toUpperCase() ?? ""}
-            src={session?.user?.image ?? ""}
-            width={200}
-            height={200}
-            className="w-10 h-10 rounded-full"
-          />
+           <Link href={"/profile"}>
+            <Image
+              alt={session.user?.name?.slice(0, 2).toUpperCase() ?? "user"}
+              src={session?.user?.image ?? "/user.png"}
+              width={200}
+              height={200}
+              className="w-10 h-10 rounded-full"
+            />
+          </Link>
         ) : (
           <Link
             className="bg-sky-600 text-white text-lg px-5 py-2 rounded-full flex items-center gap-2"
