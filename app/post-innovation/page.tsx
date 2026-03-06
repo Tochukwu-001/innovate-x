@@ -1,10 +1,11 @@
 import React from "react"
+import PostForm from "./post"
 
 const page = () => {
     return (
-        <div>
-            Make a Post
-        </div>
+        <main>
+            <PostForm/>
+        </main>
     )
 }
 

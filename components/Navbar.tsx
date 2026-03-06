@@ -85,7 +85,7 @@ export default function Navbar(){
                 {
                     session ? (
                         <Link href={"/profile"}>
-                            <img src={session?.user?.image ?? "/user.png"} alt={session?.user?.name?.slice(0, 4).toUpperCase() ?? "user"} width={200} height={200} className="w-10 h-10 rounded-full" />
+                            <Image src={session?.user?.image ?? "/user.png"} alt={session?.user?.name?.slice(0, 4).toUpperCase() ?? "user"} width={200} height={200} className="w-10 h-10 rounded-full" />
                         </Link>
                     ) : (
                 <Link onClick={()=> setNavOpen(false)} href={"/auth/signin"} className="bg-sky-600 text-white  text-lg px-10 py-2 rounded-full flex items-center gap-2">
