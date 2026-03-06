@@ -12,7 +12,7 @@ export default function Navbar(){
     const navItems = [
         {text: "Home", url: "/"},
         {text: "About Us", url: "/about"},
-        {text: "Contact Us", url: "/contact"},
+        {text: "Share Skills", url: "/contact"},
         {text: "View", url: "/view"},
     ]
     return(
