@@ -18,6 +18,7 @@ export default function SignIn (){
                         <p className="text-xs text-gray-700 w-full text-center">or continue with</p>
                         <span className="border-b border-gray-300 w-full"></span>
                     </div>
+                    {/*  */}
 
                     <div className="flex flex-col gap-5">
                         <button className="border rounded-full flex items-center justify-center gap-2 py-2 border-gray-300">
