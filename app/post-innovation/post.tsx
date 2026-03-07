@@ -1,9 +1,12 @@
 "use client"
+import { timeStamp } from 'console';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FaRegPaperPlane } from "react-icons/fa";
  import * as Yup from 'yup';
 
-export default function PostForm (){
+export default function PostForm ({session}){
+    // console.log(session);
+
     const initVal = {
         title: "",
         problem: "",
@@ -23,11 +26,19 @@ export default function PostForm (){
     return (
         <main className="min-h-dvh md:p-10 p-3">
             <h1 className='mb-10 text-center font-semibold text-2xl text-gray-800'>Contribute to our ever growing community of Innovators</h1>
-            <blockquote className='shadow-md md:w-1/2 mx-auto px-3 py-2 rounded-md'>
+            <blockquote className='shadow-md md:w-1/2 mx-auto px-3 py-5 rounded-md'>
                 <Formik
                     initialValues={initVal}
                     validationSchema={valSchema}
-                    onSubmit={()=>{console.log("Submitted")}}
+                    onSubmit={(values)=>{
+                        const details = {
+                            ...values,
+                            userName: session?.user?.name,
+                            userImage: session?.user?.image,
+                            timestamp: new Date().toLocaleDateString()
+                        }
+                        console.log(details);
+                    }}
                 >
                     <Form className='flex flex-col justify-center gap-5'>
                         <div className='w-full'>
