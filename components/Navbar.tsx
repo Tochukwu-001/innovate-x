@@ -10,7 +10,7 @@ import { useSession } from "next-auth/react";
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
 
   const navItems = [
     { text: "Home", url: "/" },
