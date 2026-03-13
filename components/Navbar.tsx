@@ -18,7 +18,7 @@ export default function Navbar(){
 ]
 
     return(
-        <main className="shadow-md px-10 py-3 flex items-center justify-between sticky top-0 bg-white">
+        <main className="shadow-md px-10 py-3 flex items-center justify-between sticky top-0 bg-white z-50">
             {/* desktop view */}
             <Link href={"/"} className="flex items-center z-50">
                 <Image
