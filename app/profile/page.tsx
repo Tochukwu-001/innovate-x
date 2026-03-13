@@ -3,6 +3,7 @@ import Image from "next/image"
 import { redirect } from "next/navigation"
 import { IoIosLogOut } from "react-icons/io";
 import { signOut } from "@/auth";
+import Update from "./update";
 
 
 export default async function Profile (){
@@ -23,6 +24,9 @@ export default async function Profile (){
                     className="w-60 h-60 md:rounded-full"
                 />
                 <span className="flex items-center gap-3 text-gray-600 text-sm text-center">Email: <h2 className="text-gray-900 font-light">{session?.user?.email}</h2></span>
+
+                    <Update session={session}/>
+
                   <form
                     action={async () => {
                         "use server"
