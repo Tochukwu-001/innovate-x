@@ -22,7 +22,11 @@ const style = {
   p: 4,
 };
 
-export default function PostForm({ session }) {
+interface ViewProps {
+  session?: any
+}
+
+export default function PostForm({ session }: ViewProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -69,6 +73,7 @@ export default function PostForm({ session }) {
             try {
               const details = {
                 ...values,
+                userId: session?.user?.id,
                 userName: session?.user?.name,
                 userImage: session?.user?.image,
                 timestamp: new Date().toLocaleDateString(),
