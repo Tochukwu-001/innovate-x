@@ -60,7 +60,7 @@ const View = ({ session }: ViewProps) => {
   };
 
   // delete function
-  const deletePost = async (id)=>{
+  const deletePost = async (id: string)=>{
     try {
         // confirmation modal
     await deleteDoc(doc(db, "innovations", id)); 
@@ -139,7 +139,7 @@ const View = ({ session }: ViewProps) => {
                 </div>
                 <div className="flex items-center justify-between">
                   <Link
-                    href={"/"}
+                    href={`/view/${post.id}`}
                     className="flex items-center gap-1 hover:text-sky-600"
                   >
                     View Details{" "}
