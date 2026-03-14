@@ -22,9 +22,9 @@ export default function PostForm ({session}: ViewProps){
     }
 
     const valSchema = Yup.object({
-        title: Yup.string().max(20, "Maximum of 20 characters").min(3,"Minimum of 3 characters").required("This is a required field"),
+        title: Yup.string().max(100, "Maximum of 100 characters").min(3,"Minimum of 3 characters").required("This is a required field"),
         problem: Yup.string().required("This is a required field"),
-        materials: Yup.string().max(80, "Max 80 characters").required("This is a required field"),
+        materials: Yup.string().max(1000, "Max 1000 characters").required("This is a required field"),
         prototype: Yup.string().min(10, "Minimum 10 characters").required("This is a required field"),
         impact: Yup.string().min(10, "Minimum 10 characters").required("This is a required field")
     })
