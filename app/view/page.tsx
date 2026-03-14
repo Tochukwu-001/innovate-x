@@ -1,10 +1,16 @@
-// "use server";
+ 
+import { auth } from "@/auth"
+import View from "./view"
+import {redirect} from "next/navigation";
 
-import View from "./view";
-const page = () => {
+const page = async () => {
+  const session = await auth()
+  if (!session) {
+    redirect("/auth/signin")
+  }
   return (
     <main>
-      <View/>
+      <View session={session}/>
     </main>
   )
 }

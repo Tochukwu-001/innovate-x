@@ -6,7 +6,11 @@ import * as Yup from 'yup';
 import { collection, addDoc } from "firebase/firestore"; 
 import { db } from '@/config/firebase';
 
-export default function PostForm ({session}){
+ interface ViewProps {
+        session?: any
+    }
+
+export default function PostForm ({session}: ViewProps){
     const [successMsg, setSuccessMsg] = useState(false); // Success state
 
     const initVal = {
@@ -48,6 +52,7 @@ export default function PostForm ({session}){
                         try {
                             const details = {
                                 ...values,
+                                userId: session?.user?.id,
                                 userName: session?.user?.name || "Anonymous",
                                 userImage: session?.user?.image || "",
                                 timestamp: new Date().toLocaleString() 
