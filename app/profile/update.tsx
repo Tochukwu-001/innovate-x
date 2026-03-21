@@ -12,7 +12,7 @@ const Update = ({ session }: ViewProps) => {
   const [updatedName, setUpdatedName] = useState(username);
 
   // update function
-  const updateProfile = async (id) => {
+  const updateProfile = async (id: string) => {
     try {
       const docRef = doc(db, "users", id);
       await updateDoc(docRef, { name: updatedName });

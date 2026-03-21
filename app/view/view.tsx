@@ -81,7 +81,7 @@ const View = ({ session }: ViewProps) => {
       </h1>
       {loading ? (
         <div className="h-[70vh] flex items-center justify-center gap-2">
-          <FiLoader className="animate-spin text-2xl" />{" "}
+          <FiLoader className="animate-spin text-2xl" />
           <p className="text-gray-600 text-sm">Loading...</p>
         </div>
       ) : (
