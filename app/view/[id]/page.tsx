@@ -1,6 +1,18 @@
 import { db } from "@/config/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
+type Post = {
+  id: string;
+  title: string;
+  userImage: string;
+  userName: string;
+  timestamp: string;
+  problem: string;
+  materials: string;
+  prototype: string;
+  impact: string;
+};
+
 const singlePost = async (id: string) => {
   if (!id) return null;
 
@@ -10,7 +22,7 @@ const singlePost = async (id: string) => {
 
     if (docSnap.exists()) {
       // console.log("Document data:", docSnap.data());
-      return { id, ...docSnap.data() };
+      return { id, ...docSnap.data() } as Post;
     } else {
       // docSnap.data() will be undefined in this case
       console.log("No such document!");
@@ -32,6 +44,14 @@ const page = async ({ params }: PageProps) => {
   const post = await singlePost(id);
 
   console.log(post);
+
+    if (!post) {
+    return (
+      <main className="min-h-dvh max-w-3xl mx-auto py-10 m-3">
+        <p className="text-center text-gray-500">Post not found.</p>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-dvh max-w-3xl mx-auto py-10 m-3">
