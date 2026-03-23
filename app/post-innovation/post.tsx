@@ -35,7 +35,6 @@ export default function PostForm(){
                     <div>
                         <label> Innovation Title</label>
                         <Field type="text" name="title" placeholder="Enter Innovation title..."/>
-                        <ErrorMessage/>
                     </div>
                
                     <div>
